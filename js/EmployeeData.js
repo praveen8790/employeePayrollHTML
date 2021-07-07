@@ -40,9 +40,9 @@ class EmployeeData{
         this._startdate = startdate;
     }
     toString(){
-        return "name=" + this.name + ", gender='" + this.gender + 
-        ", profilePic='" + this.profilePic +
-        ", salary=" + this.salary;
+        return "name=" + this.name + ", gender=" + this.gender + 
+        ", profilePic=" + this.profilePic + ", department="+ this.department.toString() +
+        ", salary=" + this.salary + ", startdate=" + this.startDate;
     }
     
 }
