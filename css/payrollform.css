@@ -160,3 +160,9 @@ error-output{
     font-style: italic;
     color: red;
 }
+
+.input1 {
+    align-items: center;
+    font-size: 16px;
+    line-height: 1.5;
+}

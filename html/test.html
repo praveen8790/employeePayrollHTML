@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width"> <title>Basic input types</title>
+    </head>
+    <body>
+        <div class="nativeDateTimePicker">
+            <input type="date" id="joindate" name="jondate">
+            <span class="validity"></span>
+        </div> 
+        <div>
+            <input type="radio" id="male" name="gender" value="male">
+            <label class="text" for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label class="text" for="female">Female</label>
+        </div>
+        <div>
+            <button onclick="submitted()">Submit</button>
+        </div>
+        <div>
+            <label class="label text" for="department">Department</label>
+            <input class="checkbox" type="checkbox" id="hr" name="h" value="HR">
+            <label class="text" for="hr">HR</label>
+            <input class="checkbox" type="checkbox" id="sales" name="h" value="Sales">
+            <label class="text" for="sales">Sales</label> 
+            <input class="checkbox" type="checkbox" id="finance" name="h" value="Finance"> 
+            <label class="text" for="finance">Finance</label> 
+            <input class="checkbox" type="checkbox" id="engineer" name="h" value="Engineer">
+            <label class="text" for="engineer">Engineer</label> 
+            <input class="checkbox" type="checkbox" id="others" name="h" value="Others">
+            <label class="text" for="others">Others</label>
+        </div>
+        <label class="label text" for="name">Name</label>
+        <input class="input" type="text" id="name" name="name" placeholder="Your name" required>
+        <error-output class="text-error" for="text"></error-output>
+        <script>
+            function submitted(){
+                // var gen = document.querySelectorAll('input[name="h"]:checked').values(); 
+                // var arr = [];
+                // for(var c of gen){
+                //     arr.push(c);
+                // }
+                // for(var k of arr)
+                // {
+                //     alert(k);
+                // }
+                
+                alert(document.querySelector('#name').value);
+            }
+            const text = document.querySelector('#name');
+            const textError = document.querySelector('.text-error'); 
+            text.addEventListener('input', function() {
+                let nameRegex = RegExp('^[A-Z]{1}[a-z]{2,}$');
+                if (nameRegex.test(text.value))
+                    textError.textContent = "";
+                else 
+                    textError.textContent = "Name is Incorrect";
+                    });
+
+        </script>
+    </body>
+</html>

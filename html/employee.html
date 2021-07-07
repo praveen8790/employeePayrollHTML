@@ -8,6 +8,7 @@
         <title>Employee payroll form</title>
         <link rel="stylesheet" href="../css/payrollform.css">
         <script src="../js/Employee.js"></script>
+        <script src="../js/EmployeeData.js"></script>
         
     </head>
     <body> 
@@ -51,7 +52,6 @@
                 </div>
                 <div class="row—content">
                     <label class="label text" for="gender">Gender</label>
-                    
                         <input type="radio" id="male" name="gender" value="male">
                         <label class="text" for="male">Male</label>
                         <input type="radio" id="female" name="gender" value="female">
@@ -60,15 +60,15 @@
                 </div>
                 <div class="row—content">
                     <label class="label text" for="department">Department</label>
-                        <input class="checkbox" type="checkbox" id="hr" name="hr" value="HR">
+                        <input class="checkbox" type="checkbox" id="hr" name="dept" value="HR">
                         <label class="text" for="hr">HR</label>
-                        <input class="checkbox" type="checkbox" id="sales" name="sales" value="Sales">
+                        <input class="checkbox" type="checkbox" id="sales" name="dept" value="Sales">
                         <label class="text" for="sales">Sales</label> 
-                        <input class="checkbox" type="checkbox" id="finance" name="finance" value="Finance"> 
+                        <input class="checkbox" type="checkbox" id="finance" name="dept" value="Finance"> 
                         <label class="text" for="finance">Finance</label> 
-                        <input class="checkbox" type="checkbox" id="engineer" name="engineer" value="Engineer">
+                        <input class="checkbox" type="checkbox" id="engineer" name="dept" value="Engineer">
                         <label class="text" for="engineer">Engineer</label> 
-                        <input class="checkbox" type="checkbox" id="others" name="others" value="Others">
+                        <input class="checkbox" type="checkbox" id="others" name="dept" value="Others">
                         <label class="text" for="others">Others</label>
                 </div>
                 <div class="row-content">
@@ -79,7 +79,11 @@
                 </div>
                 <div class="row-content">
                     <label class="label text" for="startDate">Start Date</label>
-                    <div>
+                    <div class="nativeDateTimePicker">
+                        <input type="date" class="input1" id="joindate" name="jondate">
+                        <span class="validity"></span>
+                    </div> 
+                    <!-- <div>
                         <select id="day" name="Day">
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -134,7 +138,7 @@
                             <option value="2017">2017</option>
                             <option value="2016">2016</option>
                         </select>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="row-content">
                     <label class="label text" for="notes">Notes</label>
@@ -143,7 +147,7 @@
                 <div class="buttonParent">
                     <a href="./employee.html" class="resetButton button cancelButton">Cancel</a>
                     <div class="submit-reset">
-                        <button type="submit" class="button submitButton" id="submitButton">Submit</button>
+                        <button onclick="submitted()" class="button submitButton" id="submitButton">Submit</button>
                         <button type="reset" class="resetButton button">Reset</button>
                     </div>
                 </div>
